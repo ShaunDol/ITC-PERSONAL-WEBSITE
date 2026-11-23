@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assignment #4 - Simple Payroll | Nathaniel Shaun D. Dolendo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+<aside class="side">
+  <a class="brand" href="index.html">Nathaniel Shaun D. Dolendo<small>BS Computer Science<br>Ateneo de Davao University</small></a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
+  <nav id="mainNav" aria-label="Main">
+    <ul>
+      <li><a href="index.html">About Me</a></li>
+      <li><a href="calculations.html">CS 1130 Programs</a></li>
+      <li><a href="conversion.html">1. Conversion</a></li>
+      <li><a href="tax.html">2. Income Tax</a></li>
+      <li><a href="loops.html">3. Loops</a></li>
+      <li><a href="payroll.html" class="active">4. Payroll</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main>
+  <div class="page-head">
+    <div class="inner">
+      <h1>Assignment #4: Simple Payroll System</h1>
+      <p class="subtitle">Add and delete employee records dynamically in the payroll table</p>
+    </div>
+  </div>
+  <section class="tool-section">
+    <div class="inner">
+      <div class="tool">
+        <div class="form-grid">
+          <div><label for="empName">Employee Name:</label><input type="text" id="empName" placeholder="e.g., Juan Dela Cruz" autocomplete="off"></div>
+          <div><label for="daysWorked">Days Worked:</label><input type="number" id="daysWorked" min="0" step="any" placeholder="e.g., 15" inputmode="decimal"></div>
+          <div><label for="dailyRate">Daily Rate (&#8369;):</label><input type="number" id="dailyRate" min="0" step="any" placeholder="e.g., 650" inputmode="decimal"></div>
+          <div><label for="deduction">Deduction Amount (&#8369;):</label><input type="number" id="deduction" min="0" step="any" placeholder="e.g., 500" inputmode="decimal"></div>
+        </div>
+        <div class="pay-actions">
+          <button type="button" id="addEmpBtn" class="btn solid">+ Add Employee</button>
+          <div class="delete">
+            <div><label for="deleteLineNo">Line No. to Delete:</label><input type="number" id="deleteLineNo" min="1" step="1" placeholder="e.g., 1"></div>
+            <button type="button" id="deleteEmpBtn" class="btn danger">Delete Line</button>
+          </div>
+        </div>
+        <p id="payrollError" class="error" role="alert"></p>
+        <div class="table-wrap">
+          <table class="pay">
+            <thead><tr><th>No.</th><th>Employee Name</th><th>Days Worked</th><th>Daily Rate</th><th>Gross Pay</th><th>Deduction Amount</th><th>Net Pay</th></tr></thead>
+            <tbody id="payrollBody"><tr><td colspan="7" class="empty">No employees added yet.</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <p class="pager"><a href="calculations.html">&larr; Back to CS 1130 Programs</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <div class="foot-id">
+      <img src="addu_logo.png" alt="Ateneo de Davao University logo" onerror="this.style.display='none'">
+      <div>
+        <strong>Nathaniel Shaun D. Dolendo</strong>
+        <span>CS 1130 Introduction to Computing, Ateneo de Davao University</span>
+      </div>
+    </div>
+    <a class="top" href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="payroll.js"></script>
+</body>
+</html>
